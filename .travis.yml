@@ -1,0 +1,28 @@
+dist: trusty
+sudo: false
+language: php
+
+php:
+  - 7.2
+
+notifications:
+  email:
+    on_failure: always
+
+branches:
+  only:
+    - master
+
+install:
+  - nvm install node
+  - travis_retry npm install
+
+before_script:
+  - npm run build-prod
+  - php -S localhost:8000 -t dist/ &
+  - sleep 3
+
+script:
+  - npm run mocha -- test/unit/**/*.test.js
+  - npm run mocha -- test/integration/**/*.test.js
+  - npm run mocha -- test/e2e/**/*.test.js

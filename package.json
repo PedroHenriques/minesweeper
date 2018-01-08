@@ -1,0 +1,34 @@
+{
+  "name": "minesweeper",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "pretest": "tsc",
+    "test": "mocha",
+    "mocha": "mocha",
+    "build-dev": "tsc && webpack --config webpack.dev.js",
+    "build-prod": "npm run lint && tsc && webpack --config webpack.prod.js",
+    "lint": "tslint -c ./tslint.json -p ./tsconfig.json"
+  },
+  "dependencies": {
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "seedrandom": "^2.4.3"
+  },
+  "devDependencies": {
+    "@types/react": "^16.0.34",
+    "@types/react-dom": "^16.0.3",
+    "@types/seedrandom": "^2.4.27",
+    "chai": "^4.1.2",
+    "mocha": "^4.1.0",
+    "proxyquire": "^1.8.0",
+    "puppeteer": "^0.13.0",
+    "sinon": "^4.1.4",
+    "tslint": "^5.8.0",
+    "tslint-eslint-rules": "^4.1.1",
+    "typescript": "^2.6.2",
+    "uglifyjs-webpack-plugin": "^1.1.6",
+    "webpack": "^3.10.0",
+    "webpack-merge": "^4.1.1"
+  }
+}
