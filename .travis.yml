@@ -1,9 +1,13 @@
+sudo: required
 dist: trusty
 sudo: false
 language: php
 
 php:
   - 7.2
+
+addons:
+  chrome: stable
 
 notifications:
   email:
@@ -18,6 +22,8 @@ install:
   - travis_retry npm install
 
 before_script:
+  - "sudo chown root /opt/google/chrome/chrome-sandbox"
+  - "sudo chmod 4755 /opt/google/chrome/chrome-sandbox"
   - npm run build-prod
   - php -S localhost:8000 -t dist/ &
   - sleep 3
