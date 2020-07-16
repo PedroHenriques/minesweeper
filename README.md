@@ -18,3 +18,7 @@ Revealed tiles that are adjacent to mines will have a number. This number indica
 
 - add more game modes, each introducing twists to the classic formula
 - add a backend allowing for saving a game in progress, leaderboards, etc.
+
+## Other Versions
+
+- A version created with Redux + React is available at [https://github.com/PedroHenriques/minesweeper-v2](https://github.com/PedroHenriques/minesweeper-v2).
